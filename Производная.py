@@ -1,4 +1,4 @@
-#dx
+#производная
  
 n = int(input("Количество точек функции: "))
 
@@ -21,15 +21,13 @@ while k < n:
     
 a = int(input("Точка для производной: "))
 
-for i in range(n):
-    if X[i] == a:
-        j = i
-
-g = Y[j]
-f = Y[j+1]
-h = X[j+1] - X[j]
-
-def dx(g, f, h):
+def dx(X, Y, a):
+    for i in range(n):
+        if X[i] == a:
+            j = i    
+    g = Y[j]
+    f = Y[j+1]
+    h = X[j+1] - X[j]    
     return (f - g)/h
 
-print (dx(g, f, h))
+print (dx(X, Y, a))
